@@ -1,0 +1,42 @@
+{
+  "name": "bt-printer",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/index.js\"",
+    "clean": "rimraf coverage dist tmp",
+    "prebuild": "npm run lint",
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -w -p tsconfig.json",
+    "build:release": "npm run clean && tsc -p tsconfig.release.json",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier \"{src,__{tests}__}/**/*.{ts,mts}\" --config .prettierrc --write",
+    "prettier:check": "prettier \"{src,__{tests}__}/**/*.{ts,mts}\" --config .prettierrc --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnb3000/bt-printer.git"
+  },
+  "author": "mnb3000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnb3000/bt-printer/issues"
+  },
+  "homepage": "https://github.com/mnb3000/bt-printer#readme",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.15.30",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "tsc-watch": "^7.1.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
+  }
+}
